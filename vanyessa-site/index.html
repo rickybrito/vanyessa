@@ -1,0 +1,758 @@
+<!doctype html><html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fffaf8"><meta name="description" content="Vanyessa Jeentilal Makeup: maquilhagem profissional, noivas, lash lift e beauty shopping em Maputo."><meta property="og:title" content="Vanyessa Jeentilal Makeup"><meta property="og:description" content="Beauty, artistry & everything in between."><meta property="og:image" content="assets/ebook-mockup.jpg"><link rel="icon" href="favicon.png"><title>Vanyessa Jeentilal Makeup</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* v3 (a partir dos 8 VNs): logotipo fixo, serviços com 2 fotos + descrição, Lash Lift à parte, paleta mais clara,
+   poucas animações (batom 3D, livro 3D e algumas borboletinhas no scroll). */
+:root{
+  color-scheme:light;
+  --bg:#fffaf8;
+  --bg-2:#fdf0ee;
+  --ink:#3a2f33;
+  --ink-2:#7a666c;
+  --rose:#c98593;
+  --rose-deep:#b46f80;
+  --rose-soft:#f8e1e4;
+  --line:rgba(201,133,147,.34);
+  --card:#ffffff;
+  --card-line:rgba(201,133,147,.22);
+  --menu-bg:rgba(255,250,248,.97);
+  --on-ink:#fffaf8;
+  --shadow:0 20px 50px -30px rgba(150,80,100,.35);
+  --f-display:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
+  --f-ui:'Jost','Helvetica Neue',Arial,sans-serif;
+  --vh:100vh;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--f-ui);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wash{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(70% 40% at 10% 4%,rgba(248,225,228,.5),transparent 70%),
+    radial-gradient(60% 40% at 100% 45%,rgba(253,236,228,.55),transparent 72%),
+    radial-gradient(70% 40% at 0% 90%,rgba(248,225,228,.4),transparent 72%)}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+main{position:relative;z-index:1}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,8.6vw + .4rem,5.2rem);line-height:1}
+h2{font-size:clamp(2rem,5.6vw + .3rem,3.4rem);line-height:1.04}
+h3{font-size:1.7rem;line-height:1.1}
+em{font-style:italic;color:var(--rose-deep);font-weight:400}
+p{margin:0}
+.eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-deep);margin:0 0 14px}
+.lede{font-size:1.04rem;color:var(--ink-2);max-width:46ch}
+.price{font-family:var(--f-ui);font-weight:500;font-size:1.02rem;letter-spacing:.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 28px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font:500 .76rem/1 var(--f-ui);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{background:var(--rose-soft)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+:focus-visible{outline:2px solid var(--rose-deep);outline-offset:3px;border-radius:6px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+/* cabeçalho */
+.top{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  padding:calc(env(safe-area-inset-top,0px) + 12px) max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));
+  background:linear-gradient(var(--bg) 40%,rgba(255,250,248,0));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.brand img{width:min(190px,52vw);height:auto}
+.burger{width:46px;height:46px;border:0;background:transparent;display:grid;place-content:center;gap:6px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.menu{position:absolute;top:100%;left:0;right:0;background:var(--menu-bg);border-bottom:1px solid var(--line);padding:10px 16px 26px;display:grid;justify-items:center;gap:2px}
+.menu a{font-family:var(--f-display);font-size:1.5rem;text-decoration:none;padding:9px 18px}
+.menu a.pill{margin-top:8px;border:1px solid var(--line);border-radius:999px;font-family:var(--f-ui);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;padding:13px 24px;color:var(--rose-deep)}
+
+.fab{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;width:48px;height:48px;opacity:.92;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 28px -8px rgba(18,140,70,.55);transition:transform .25s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:26px;height:26px;fill:#fff}
+
+/* borboletinhas decorativas (poucas, discretas) */
+.bflies{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bf{position:absolute;left:0;top:0;opacity:.5;will-change:transform}
+.bf img{width:100%;height:auto}
+
+/* hero: logótipo fixo, sem animação */
+.hero{min-height:var(--vh);display:grid;align-items:center;padding-block:96px 90px}
+.hero-in{display:grid;gap:26px;align-items:center}
+.hero-mark{display:grid;place-items:center}
+.hero-mark img{width:min(64%,300px);height:auto}
+.hero-copy{display:grid;gap:18px;justify-items:start}
+.hero-copy .slogan{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);padding-right:72px}
+@media (min-width:860px){
+  .hero-in{grid-template-columns:1.05fr .95fr;gap:40px}
+  .hero-mark{order:2}
+  .hero-mark img{width:min(80%,420px)}
+}
+
+/* batom (secção fixa) */
+.pin{position:relative}
+.pin-in{position:sticky;top:0;height:var(--vh);overflow:hidden}
+#reveal{height:calc(var(--vh)*3.2)}
+.reveal-in{display:flex;align-items:flex-end;padding-bottom:calc(9vh + env(safe-area-inset-bottom,0px))}
+.reveal-copy{display:grid;gap:10px;max-width:440px}
+.reveal-copy h2{min-height:1.05em}
+.reveal-copy .meta{display:flex;align-items:center;gap:16px;min-height:28px}
+.dots{display:flex;gap:8px;list-style:none;margin:0;padding:0}
+.dots li{width:26px;height:3px;border-radius:2px;background:var(--line);transition:background .4s,width .4s}
+.dots li.on{background:var(--rose-deep);width:40px}
+.reveal-copy .lede{min-height:3.3em}
+@media (min-width:860px){.reveal-in{align-items:center;padding-bottom:0}.reveal-copy{max-width:420px}}
+
+section[id]{scroll-margin-top:70px}
+.sec{padding-block:64px}
+.sec-head{display:grid;gap:12px;margin-bottom:34px}
+
+/* serviços: 2 fotos lado a lado + descrição por baixo */
+.svc-list{display:grid;gap:56px}
+@media (min-width:860px){.svc-list{grid-template-columns:1fr 1fr;gap:64px 56px}}
+.svc{display:grid;gap:18px;align-content:start}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair.one{grid-template-columns:1fr 1fr}
+.pair.one figure:only-child{grid-column:1/2}
+.pair figure{margin:0;aspect-ratio:3/4;border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--rose-soft);box-shadow:var(--shadow)}
+.pair img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.pair .soon{display:grid;place-items:center;text-align:center;padding:14px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);border:1px dashed var(--line);background:transparent;box-shadow:none}
+.svc-h{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
+.svc p{color:var(--ink-2);font-size:.98rem}
+.svc .tag{font-family:var(--f-display);font-style:italic;font-size:1.3rem;line-height:1.25;color:var(--rose-deep)}
+.dur{display:flex;align-items:center;gap:8px;font-size:.78rem!important;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)!important}
+.dur svg{width:16px;height:16px;fill:none;stroke:var(--rose-deep);stroke-width:1.6;stroke-linecap:round}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.chips li{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.note{margin-top:30px;font-size:.92rem;color:var(--ink-2);max-width:56ch}
+
+/* noivas */
+.steps{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:20px;max-width:560px}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start}
+.steps .n{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--f-display);font-size:1.3rem;color:var(--rose-deep);background:var(--card)}
+.steps h3{font-size:1.45rem}
+.steps p{color:var(--ink-2);font-size:.96rem}
+
+/* lash lift */
+.lash{margin-top:64px;scroll-margin-top:70px;display:grid;gap:26px;align-items:center;padding:28px;border:1px solid var(--card-line);border-radius:26px;background:var(--card);box-shadow:var(--shadow)}
+.lash-ph{margin:0 auto;width:min(100%,420px)}
+.lash-ph img{width:100%;height:auto;border-radius:20px;box-shadow:var(--shadow)}
+.lash-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;color:var(--ink-2);font-size:.97rem}
+.lash-list b{color:var(--ink);font-weight:500}
+.lash-b{display:grid;gap:12px;justify-items:start}
+@media (min-width:860px){.lash{grid-template-columns:1fr 1fr;padding:40px;gap:48px}}
+
+/* shopping */
+.shop{display:grid;gap:14px}
+@media (min-width:760px){.shop{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:900px){.shop{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.shop article{padding:22px;border:1px solid var(--card-line);border-radius:22px;background:var(--card);box-shadow:var(--shadow);display:grid;gap:8px;align-content:start}
+.shop h3{font-size:1.5rem}
+.shop p{color:var(--ink-2);font-size:.94rem}
+
+/* testemunhos */
+.tgrid{display:grid;gap:16px}
+@media (min-width:760px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.tgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tcard{padding:24px;border:1px solid var(--card-line);border-radius:22px;background:var(--card);box-shadow:var(--shadow);display:grid;gap:14px;align-content:space-between}
+.tcard p:first-child{font-family:var(--f-display);font-size:1.3rem;line-height:1.35}
+.tname{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep)}
+
+/* sobre */
+.about{display:grid;gap:30px;align-items:center}
+.frame{width:min(54%,230px);justify-self:center;aspect-ratio:3/4;border-radius:999px 999px 22px 22px;background:var(--rose-soft);display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}
+.frame img{width:58%;height:auto}
+.frame img.photo{width:100%;height:100%;object-fit:cover}
+.about-copy{display:grid;gap:16px;max-width:52ch}
+.about-copy p{color:var(--ink-2)}
+@media (min-width:860px){.about{grid-template-columns:.8fr 1.2fr;gap:80px}}
+
+/* teaser ebook */
+.teaser{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:center;padding:16px;overflow:hidden;border:1px solid var(--card-line);border-radius:26px;background:var(--card);box-shadow:var(--shadow)}
+.teaser img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:18px}
+.eb-title{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:18px}
+.teaser-b{display:grid;gap:10px;justify-items:start}
+.teaser-b h3{font-size:1.7rem}
+.teaser-b p{color:var(--ink-2);font-size:.96rem}
+@media (max-width:620px){.teaser{grid-template-columns:1fr}}
+
+/* contacto + rodapé */
+.contact{display:grid;gap:22px;justify-items:center;text-align:center;padding-block:90px 50px}
+.contact .lede{margin-inline:auto}
+.contact-list{display:grid;gap:6px;justify-items:center;color:var(--ink-2);font-size:.98rem}
+.contact-list a{text-underline-offset:4px}
+.foot{padding-block:44px calc(96px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:grid;gap:18px;justify-items:center;text-align:center;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
+.foot .fb{width:min(150px,40vw);height:auto}
+.foot .fw{width:min(420px,86vw);height:auto}
+
+/* ebook */
+.eb-hero{padding-block:96px 8px;display:grid;align-items:center}
+.eb-grid{display:grid;gap:22px;align-items:center}
+.book-stage{margin:0}.book-stage img{width:100%;max-width:520px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:26px;box-shadow:var(--shadow);margin-inline:auto}
+.eb-copy{display:grid;gap:16px;justify-items:start}
+.eb-copy h1 em{display:block}
+.bonus{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;align-items:start;padding:18px 20px;border:1px solid var(--card-line);border-radius:20px;background:var(--card);box-shadow:var(--shadow);max-width:460px}
+.bonus svg{width:30px;height:30px;fill:none;stroke:var(--rose-deep);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.bonus p{margin:0}
+.bonus-k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--rose-deep)}
+.bonus-t{font-family:var(--f-display);font-size:1.5rem;line-height:1.15;margin-top:4px!important}
+.bonus-d{color:var(--ink-2);font-size:.92rem;margin-top:6px!important}
+.eb-end{display:grid;gap:14px;justify-items:center;margin-top:30px}
+.eb-end small{color:var(--ink-2);font-size:.88rem}
+@media (min-width:860px){.eb-grid{grid-template-columns:1fr 1fr;gap:56px}.book-stage{order:2}}
+.chap{display:grid;gap:18px}
+@media (min-width:700px){.chap{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.chap{grid-template-columns:1fr 1fr 1fr}}
+.chap article{padding:24px;border:1px solid var(--card-line);border-radius:22px;background:var(--card);box-shadow:var(--shadow);display:grid;gap:12px;align-content:start}
+.chap .cn{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-deep)}
+.chap h3{font-size:1.55rem}
+.chap ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;color:var(--ink-2);font-size:.94rem}
+.chap li{padding-left:18px;position:relative}
+.chap li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--rose-deep)}
+.quote{font-family:var(--f-display);font-size:clamp(1.7rem,4.6vw,2.8rem);line-height:1.15;text-align:center;max-width:22ch;margin:0 auto;text-wrap:balance}
+.back{display:inline-block;margin-top:30px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);text-underline-offset:5px}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}.hero-copy>*:nth-child(5){animation-delay:.32s}
+@media (prefers-reduced-motion:reduce){.hero-copy>*{animation:none}.btn,.fab{transition:none}.bflies{display:none}}
+</style></head><body>
+
+<div class="wash" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="bflies" id="bflies" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <a class="brand" href="#inicio" aria-label="Vanyessa Jeentilal Makeup, início"><img src="assets/wordmark.png" alt="Vanyessa Jeentilal" width="900" height="117"></a>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  <nav class="menu" id="menu" hidden aria-label="Principal">
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#shopping">Beauty Shopping</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contacto">Contacto</a>
+    <a class="pill" href="#ebook">Ebook</a>
+  </nav>
+</header>
+
+<a class="fab" data-wa="Olá Vanyessa! Gostava de marcar uma maquilhagem." href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+<main>
+<div id="view-home">
+
+  <section class="hero" id="inicio">
+    <div class="wrap hero-in">
+      <div class="hero-mark"><img src="assets/butterfly.png" alt="Logótipo Vanyessa Jeentilal Makeup, borboleta" width="520" height="374"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Makeup artist profissional</p>
+        <h1>Beauty, Artistry &amp; <em>Everything in Between</em></h1>
+        <p class="lede">Maquilhagem profissional, experiências personalizadas de beleza e uma seleção de produtos cuidadosamente escolhidos para ti.</p>
+        <div class="cta-row">
+          <a class="btn" data-wa="Olá Vanyessa! Gostava de marcar uma maquilhagem." href="#" target="_blank" rel="noopener">Marcar no WhatsApp</a>
+          <a class="btn ghost" href="#servicos">Ver serviços</a>
+        </div>
+        <p class="slogan">Elevating beauty, one face at a time</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pin" id="reveal" aria-label="Níveis de maquilhagem">
+    <div class="pin-in wrap reveal-in">
+      <div class="reveal-copy">
+        <p class="eyebrow">Cada look tem o seu nível</p>
+        <h2 id="rvName">Abre o Batom</h2>
+        <div class="meta"><span class="price" id="rvPrice"></span><ol class="dots" id="rvDots"><li></li><li></li><li></li><li></li></ol></div>
+        <p class="lede" id="rvText">Desliza devagar e vê a maquilhagem ganhar intensidade, do natural ao full glam.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="servicos">
+    <div class="sec-head">
+      <p class="eyebrow">Makeup Services</p>
+      <h2>Escolhe o Teu <em>Glam</em></h2>
+      <p class="lede">Preços em meticais (MT). A marcação é feita pelo WhatsApp.</p>
+    </div>
+    <div class="svc-list">
+
+      <article class="svc">
+        <div class="pair">
+          <figure><img src="assets/natural.jpg" alt="Maquilhagem Natural Glam" loading="lazy" width="600" height="800"></figure>
+          <figure><img src="assets/natural-2.jpg" alt="Maquilhagem Natural Glam, outro look" loading="lazy" width="600" height="800"></figure>
+        </div>
+        <div class="svc-h"><h3>Natural Glam</h3><p class="price">1.500 MT</p></div><p class="tag">A tua beleza, na sua versão mais fresca.</p><p class="dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duração: 45 min</p>
+        <p>Maquilhagem leve e natural: não usamos base, apenas corretivo e um blush suave. Olhos bem simples, com gloss, e lábios à escolha da cliente.</p>
+        <ul class="chips"><li>Sem base</li><li>Cílios não incluídos</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="pair">
+          <figure><img src="assets/soft-1.jpg" alt="Maquilhagem Soft Glam" loading="lazy" width="800" height="1067"></figure>
+          <figure><img src="assets/soft-2.jpg" alt="Maquilhagem Soft Glam com lábio marcante" loading="lazy" width="800" height="1067"></figure>
+        </div>
+        <div class="svc-h"><h3>Soft Glam</h3><p class="price">2.000 MT</p></div><p class="tag">Suave, luminosa e sem exageros.</p><p class="dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duração: 1h – 1h30</p>
+        <p>Maquilhagem suave, com base de cobertura média leve, contorno e blush menos marcados. Olho simples ou elaborado, com brilho, e lábio delicado ou marcante.</p>
+        <ul class="chips"><li>Base média leve</li><li>Cílios incluídos</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="pair">
+          <figure><img src="assets/full-1.jpg" alt="Maquilhagem Full Glam" loading="lazy" width="800" height="1067"></figure>
+          <figure><img src="assets/full-2.jpg" alt="Maquilhagem Full Glam com olhos elaborados" loading="lazy" width="800" height="1067"></figure>
+        </div>
+        <div class="svc-h"><h3>Full Glam</h3><p class="price">3.000 MT</p></div><p class="tag">Para quando o momento pede tudo.</p><p class="dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duração: 1h30 – 1h45</p>
+        <p>Maquilhagem com base de cobertura média alta, blush e contorno bem mais marcados. Olhos elaborados, com batom ou gloss. Inclui cílios, de preferência dramáticos.</p>
+        <ul class="chips"><li>Base média alta</li><li>Cílios incluídos</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="pair">
+          <figure><img src="assets/festival-1.jpg" alt="Maquilhagem Festival Glam" loading="lazy" width="800" height="1072"></figure>
+          <figure><img src="assets/festival-2.jpg" alt="Maquilhagem Festival Glam com pedrinhas" loading="lazy" width="800" height="1067"></figure>
+        </div>
+        <div class="svc-h"><h3>Festival Glam</h3><p class="price">2.500 MT</p></div><p class="tag">Brilho, cor e pedrinhas para brilhar até ao fim.</p><p class="dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duração: 1h – 1h45</p>
+        <p>Maquilhagem com pele suave ou trabalhada, glowy, com muito brilho: glitter, highlighter e pedrinhas (rhinestones).</p>
+        <ul class="chips"><li>Glitter</li><li>Highlighter</li><li>Rhinestones</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="pair">
+          <figure><img src="assets/bridal-1.jpg" alt="Maquilhagem de noiva" loading="lazy" width="800" height="1067"></figure>
+          <figure><img src="assets/bridal-5.jpg" alt="Maquilhagem de noiva, outro ângulo" loading="lazy" width="800" height="1067"></figure>
+        </div>
+        <div class="svc-h"><h3>Bridal</h3><p class="price">8.000 MT</p></div><p class="tag">O teu dia, o teu look, do teu jeito.</p>
+        <p>Maquilhagem personalizada para noivas, pensada para realçar a beleza natural e criar um look elegante, sofisticado, romântico e duradouro. Um mix de soft glam e full glam, conforme o estilo da noiva. Inclui teste antes do grande dia.</p>
+        <ul class="chips"><li>Teste incluído</li><li>Chamada prévia</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="pair">
+          <figure><img src="assets/art-1.jpg" alt="Maquilhagem artística" loading="lazy" width="800" height="1067"></figure>
+          <figure><img src="assets/art-2.jpg" alt="Maquilhagem artística em roxo e pedraria" loading="lazy" width="800" height="1169"></figure>
+        </div>
+        <div class="svc-h"><h3>Artística</h3><p class="price">Sob consulta</p></div><p class="tag">A tua ideia, transformada em arte.</p><p class="dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duração sob consulta</p>
+        <p>Maquilhagem criada à medida, com cor, pintura e detalhes gráficos. Conta-me a ideia e eu faço o orçamento.</p>
+      </article>
+
+    </div>
+
+    <div class="lash" id="lash">
+    <figure class="lash-ph"><img src="assets/lash.jpg" alt="Lash lift: pestanas depois do tratamento" loading="lazy" width="900" height="974"></figure>
+    <div class="lash-b">
+      <p class="eyebrow" style="margin:0">Beauty Treatments</p>
+      <h2>Lash <em>Lift</em></h2>
+      <p class="tag" style="font-family:var(--f-display);font-style:italic;font-size:1.3rem;color:var(--rose-deep)">Olhar aberto, sem rímel todos os dias.</p>
+      <p class="lede">O lifting de pestanas, também conhecido como permanente de pestanas ou lash lift, realça a curvatura natural dos cílios e cria um efeito de olhos mais abertos e expressivos, sem fios artificiais nem curvador.</p>
+      <ul class="lash-list"><li><b>Efeito natural:</b> realça os cílios naturais, sem extensões.</li><li><b>Durabilidade:</b> os resultados podem durar de 6 a 8 semanas.</li><li><b>Baixa manutenção:</b> reduz a necessidade de curvar os cílios ou aplicar rímel.</li></ul>
+      <p class="price">1.800 MT</p>
+      <p class="dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Duração: 1h15</p>
+      <a class="btn" data-wa="Olá Vanyessa! Quero marcar um Lash Lift." href="#" target="_blank" rel="noopener">Marcar Lash Lift</a>
+    </div>
+  </div>
+  </section>
+
+  <section class="sec wrap" id="noivas" style="padding-top:20px">
+    <p class="eyebrow">Para noivas</p>
+    <h2>O Teu Grande Dia, <em>Sem Pressa.</em></h2>
+    <ol class="steps">
+      <li><span class="n">1</span><div><h3>Agenda Uma Chamada</h3><p>Conhecemos as tuas preferências, referências e o estilo de maquilhagem que idealizas para o teu casamento.</p></div></li>
+      <li><span class="n">2</span><div><h3>Faz o Teste</h3><p>Experimentamos e ajustamos o look para encontrar o equilíbrio perfeito entre o que desejas e aquilo que valoriza a tua beleza.</p></div></li>
+      <li><span class="n">3</span><div><h3>O Grande Dia</h3><p>A tua maquilhagem é realizada com todos os detalhes definidos, para que desfrutes do teu dia com confiança.</p></div></li>
+    </ol>
+    <div class="cta-row" style="margin-top:28px"><a class="btn" data-wa="Olá Vanyessa! Quero agendar uma chamada para maquilhagem de noiva." href="#" target="_blank" rel="noopener">Agendar chamada</a></div>
+  </section>
+
+  <section class="sec wrap" id="shopping">
+    <div class="sec-head">
+      <p class="eyebrow">Beauty Shopping</p>
+      <h2>Personal Shopper, <em>à Tua Medida</em></h2>
+      <p class="lede">Procuramos e encomendamos produtos selecionados de beleza e lifestyle, de acordo com as tuas preferências.</p>
+    </div>
+    <div class="shop">
+      <article><h3>Cosméticos</h3><p>Maquilhagem, glosses, pincéis e essenciais de beleza.</p></article>
+      <article><h3>Skincare</h3><p>Produtos de cuidado facial e corporal.</p></article>
+      <article><h3>Perfumes</h3><p>Uma seleção de fragrâncias para diferentes gostos e ocasiões.</p></article>
+    </div>
+    <div class="cta-row" style="margin-top:28px"><a class="btn" data-wa="Olá Vanyessa! Quero fazer uma encomenda de produtos de beleza." href="#" target="_blank" rel="noopener">Fazer encomenda</a></div>
+  </section>
+
+  <section class="sec wrap" id="testemunhos" hidden>
+    <div class="sec-head">
+      <p class="eyebrow">Testemunhos</p>
+      <h2>Look What Our <em>Clients Are Saying</em></h2>
+    </div>
+    <div class="tgrid" id="tGrid"></div>
+  </section>
+
+  <section class="sec wrap" id="sobre">
+    <div class="about">
+      <div class="frame" id="sobreFrame"><img src="assets/butterfly.png" alt="" width="520" height="374"></div>
+      <div class="about-copy">
+        <p class="eyebrow">Sobre mim</p>
+        <h2>Olá, Sou a <em>Vanessa.</em></h2>
+        <p>A minha paixão pela maquilhagem começou em 2020, durante a quarentena, e transformou-se numa jornada de aprendizagem, criatividade e crescimento profissional.</p>
+        <p>Ao longo dos anos, investi na minha formação em maquilhagem artística, profissional e noivas, desenvolvendo uma paixão especial por realçar a beleza individual de cada mulher.</p>
+        <p>Acredito que a maquilhagem vai muito além da aparência: é expressão, confiança e uma forma de nos sentirmos ainda mais bonitas na nossa própria pele.</p>
+        <p>Hoje, através da Makeup by Vee, partilho essa paixão em cada look, cada experiência e cada oportunidade de ensinar outras mulheres a descobrirem a sua própria beleza.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="teaser" style="padding-block:10px 40px">
+    <h2 class="eb-title">Ebook de Auto Maquilhagem</h2>
+    <div class="teaser">
+      <img src="assets/ebook-mockup.jpg" alt="Ebook Maquilha-te como uma deusa, em formato livro" loading="lazy" width="1000" height="1000">
+      <div class="teaser-b">
+        <p class="eyebrow" style="margin:0">Ebook disponível</p>
+        <h3>Maquilha-te Como Uma Deusa</h3>
+        <p>Aprende a maquilhar-te com simplicidade, leveza e poder, em cinco dias.</p>
+        <a class="btn" href="#ebook">Saber mais</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contacto">
+    <p class="eyebrow" style="margin:0">Contacto</p>
+    <h2>Vamos Marcar o <em>Teu Look?</em></h2>
+    <p class="lede">Manda mensagem com a data, o tipo de maquilhagem e a tua ideia. Respondo o mais depressa possível.</p>
+    <a class="btn" data-wa="Olá Vanyessa! Gostava de marcar uma maquilhagem." href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar no WhatsApp</a>
+    <div class="contact-list">
+      <span>WhatsApp +258 87 521 2576</span>
+      <a href="https://instagram.com/vanyessa.mua" target="_blank" rel="noopener">Instagram @vanyessa.mua</a>
+    </div>
+  </section>
+
+  <footer class="wrap foot">
+    <img class="fb" src="assets/butterfly.png" alt="" width="520" height="374" loading="lazy">
+    <img class="fw" src="assets/wordmark.png" alt="Vanyessa Jeentilal Makeup" width="900" height="117" loading="lazy">
+    <span>Elevating beauty, one face at a time</span>
+  </footer>
+</div>
+
+<!-- ============ EBOOK ============ -->
+<div id="view-ebook" hidden>
+  <section class="eb-hero">
+    <div class="wrap eb-grid">
+      <figure class="book-stage"><img src="assets/ebook-mockup.jpg" alt="Ebook Maquilha-te como uma deusa, em formato livro" width="1000" height="1000"></figure>
+      <div class="eb-copy">
+        <p class="eyebrow">Ebook de automaquilhagem</p>
+        <h1>Maquilha-te <em>Como Uma Deusa</em></h1>
+        <p class="lede">Aprende a maquilhar-te com simplicidade, leveza e confiança. Cinco dias de aprendizagem, ao teu ritmo, para descobrires técnicas e criares looks que combinam contigo.</p>
+        <div class="bonus">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg>
+          <div><p class="bonus-k">E ainda recebes um bónus!</p><p class="bonus-t">Vídeo-Aula Exclusiva</p><p class="bonus-d">Conteúdo extra para complementar a tua aprendizagem e colocar as técnicas em prática.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" style="padding-top:36px">
+    <div class="sec-head">
+      <p class="eyebrow">O que vais aprender</p>
+      <h2>Do Básico ao <em>Teu Estilo</em></h2>
+    </div>
+    <div class="chap">
+      <article><span class="cn">Capítulo 1</span><h3>A Base de Tudo</h3><ul><li>A verdade sobre maquilhagem</li><li>Mitos, erros comuns e mentalidade certa</li><li>Preparação da pele: limpeza, hidratação e primer</li></ul></article>
+      <article><span class="cn">Capítulo 2</span><h3>O Kit Certo, Sem Exageros</h3><ul><li>Nécessaire minimalista e inteligente</li><li>Produtos essenciais para o dia a dia</li><li>Como escolher base, corretivo, blush e ferramentas</li></ul></article>
+      <article><span class="cn">Capítulo 3</span><h3>Maquilhagem em 15 Minutos</h3><ul><li>Passo a passo completo</li><li>Pele, olhos e lábios</li><li>Acabamento natural e duradouro</li></ul></article>
+      <article><span class="cn">Capítulo 4</span><h3>Ajustes, Truques e Correções</h3><ul><li>Face chart: onde aplicar cada produto</li><li>Os erros que estragam a maquilhagem</li><li>Truques profissionais simples</li></ul></article>
+      <article><span class="cn">Capítulo 5</span><h3>Cuida da Tua Pele e do Teu Poder</h3><ul><li>Rotina pós-makeup</li><li>Cuidados essenciais com a pele</li><li>Confiança, identidade e estilo pessoal</li></ul></article>
+      <article><span class="cn">Desafio final</span><h3>Transforma-te em 5 Dias</h3><ul><li>Aplicando tudo na prática, no teu ritmo</li><li>Bónus: dicas extras e vídeo aula</li></ul></article>
+    </div>
+  </section>
+
+  <section class="sec wrap" style="text-align:center">
+    <p class="quote">A maquilhagem certa é simples, intuitiva e acessível.</p>
+    <div class="eb-end"><a class="btn" data-wa="Olá Vanyessa! Quero o ebook &quot;Maquilha-te como uma deusa&quot; e o bónus." href="#" target="_blank" rel="noopener">Quero o meu ebook + bónus</a><small>Fala comigo pelo WhatsApp para receberes o teu guia.</small></div>
+    <a class="back" href="#inicio">Voltar ao início</a>
+  </section>
+
+  <footer class="wrap foot">
+    <img class="fb" src="assets/butterfly.png" alt="" width="520" height="374" loading="lazy">
+    <img class="fw" src="assets/wordmark.png" alt="Vanyessa Jeentilal Makeup" width="900" height="117" loading="lazy">
+    <span>Elevating beauty, one face at a time</span>
+  </footer>
+</div>
+</main>
+
+<script src="three.min.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var clamp=function(x,a,b){return Math.min(b,Math.max(a,x))};
+var smooth=function(x){x=clamp(x,0,1);return x*x*(3-2*x)};
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* contacto */
+var WA='258875212576';
+var waLink=function(msg){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg)};
+$$('[data-wa]').forEach(function(a){a.href=waLink(a.getAttribute('data-wa'))});
+
+/* fotos opcionais: quando a cliente enviar, basta pôr os ficheiros em assets/ (lash.jpg, sobre.jpg) */
+function optionalImg(src,host,cls,alt,replace){
+  var im=new Image();im.onload=function(){
+    if(replace)host.textContent='';
+    im.className=cls||'';im.alt=alt;host.appendChild(im);
+  };im.src=src;
+}
+optionalImg('assets/sobre.jpg',$('#sobreFrame'),'photo','Vanyessa Jeentilal',true);
+
+/* menu */
+var burger=$('#burger'),menu=$('#menu');
+function closeMenu(){menu.hidden=true;burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Abrir menu')}
+burger.addEventListener('click',function(){
+  var open=menu.hidden;menu.hidden=!open;
+  burger.setAttribute('aria-expanded',String(open));
+  burger.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+
+/* altura estável */
+var H=window.innerHeight,W=window.innerWidth;
+function setVh(force){
+  var h=window.innerHeight,w=window.innerWidth;
+  if(force||w!==W||Math.abs(h-H)>120){H=h;W=w;document.documentElement.style.setProperty('--vh',H+'px')}
+}
+setVh(true);
+
+/* router */
+var views={home:$('#view-home'),ebook:$('#view-ebook')};
+var currentView='';
+var onLayout=function(){};
+function route(first){
+  var h=(location.hash||'').replace('#','');
+  var v=h==='ebook'?'ebook':'home';
+  var changed=v!==currentView;
+  if(changed){
+    currentView=v;
+    views.home.hidden=v!=='home';views.ebook.hidden=v!=='ebook';
+    window.scrollTo(0,0);
+    onLayout();
+  }
+  if(v==='home'){
+    if(h&&h!=='inicio'){
+      var el=document.getElementById(h);
+      if(el)setTimeout(function(){el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})},changed?80:0);
+    }else if(!first&&!changed){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'})}
+  }
+  closeMenu();
+}
+window.addEventListener('hashchange',function(){route(false)});
+
+/* batom: níveis */
+var LEVELS=[
+  {n:'Natural Glam',p:'1.500 MT',t:'Pele leve, só com corretivo e um blush suave. Lábio nude com gloss.'},
+  {n:'Soft Glam',p:'2.000 MT',t:'Base média leve, contorno e blush delicados. Cílios incluídos.'},
+  {n:'Festival Glam',p:'2.500 MT',t:'Glow, glitter, highlighter e pedrinhas para brilhar.'},
+  {n:'Full Glam',p:'3.000 MT',t:'Cobertura média alta, contorno marcado e olhos elaborados.'}
+];
+var rv={name:$('#rvName'),price:$('#rvPrice'),text:$('#rvText'),dots:$$('#rvDots li'),lvl:-2};
+function setLevel(l){
+  if(l===rv.lvl)return;rv.lvl=l;
+  if(l<0){rv.name.textContent='Abre o Batom';rv.price.textContent='';rv.text.textContent='Desliza devagar e vê a maquilhagem ganhar intensidade, do natural ao full glam.'}
+  else{var d=LEVELS[l];rv.name.textContent=d.n;rv.price.textContent=d.p;rv.text.textContent=d.t}
+  rv.dots.forEach(function(el,i){el.classList.toggle('on',i<=l&&l>=0)});
+}
+setLevel(-1);
+
+/* testemunhos (preencher com os feedbacks do Google: text, name, source) */
+var TESTIMONIALS=[];
+(function(){
+  if(!TESTIMONIALS.length)return;
+  var g=$('#tGrid');
+  TESTIMONIALS.forEach(function(t){
+    var a=document.createElement('article');a.className='tcard';
+    var q=document.createElement('p');q.textContent='“'+t.text+'”';
+    var w=document.createElement('p');w.className='tname';w.textContent=t.name+(t.source?' · '+t.source:'');
+    a.appendChild(q);a.appendChild(w);g.appendChild(a);
+  });
+  $('#testemunhos').hidden=false;
+})();
+
+/* borboletinhas decorativas: poucas, pequenas, sobem devagar com o scroll */
+var BF=[
+  {x:.88,y:.25,s:26,v:.16,r:18},{x:.03,y:.6,s:22,v:.1,r:-22},{x:.9,y:.85,s:22,v:.2,r:12}
+];
+var bfEls=[];
+(function(){
+  var host=$('#bflies');
+  BF.forEach(function(b){
+    var d=document.createElement('div');d.className='bf';d.style.width=b.s+'px';
+    var im=document.createElement('img');im.src='assets/butterfly.png';im.alt='';d.appendChild(im);
+    host.appendChild(d);bfEls.push(d);
+  });
+})();
+function moveBf(sy){
+  if(reduce)return;
+  var span=H+160;
+  for(var i=0;i<BF.length;i++){
+    var b=BF[i],y=((b.y*H-sy*b.v*1.6)%span+span)%span-80;
+    var x=b.x*W+Math.sin(sy*0.004+i*2)*14;
+    bfEls[i].style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) rotate('+(b.r+Math.sin(sy*0.006+i)*12).toFixed(1)+'deg)';
+    bfEls[i].style.opacity=currentView==='home'?(.26+.14*Math.sin(sy*0.003+i)).toFixed(2):'.22';
+  }
+}
+
+/* ========================= 3D: batom e livro ========================= */
+var gl=null;
+try{
+  if(!window.THREE)throw new Error('three indisponível');
+  gl=init3D();
+}catch(err){
+  console.warn('3D desligado:',err);
+  document.documentElement.classList.add('no3d');
+}
+if(gl){onLayout=gl.layout}
+route(true);
+if(gl)gl.layout();
+(function(){var ticking=false;function on(){moveBf(window.scrollY);ticking=false}
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(on)}},{passive:true});
+  window.addEventListener('resize',on);on()})();
+
+function init3D(){
+  var T=THREE;
+  var canvas=$('#gl');
+  var renderer=new T.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
+  renderer.outputEncoding=T.sRGBEncoding;
+  renderer.toneMapping=T.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=1.05;
+  renderer.setClearColor(0x000000,0);
+
+  var FOV=40,CAMZ=10;
+  var scene=new T.Scene();
+  var camera=new T.PerspectiveCamera(FOV,1,0.1,60);
+  camera.position.set(0,0,CAMZ);
+
+  (function(){
+    var s=new T.Scene();
+    s.add(new T.Mesh(new T.BoxGeometry(24,24,24),new T.MeshBasicMaterial({color:0xb48896,side:T.BackSide})));
+    function panel(c,k,w,h,x,y,z){
+      var m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({color:new T.Color(c).multiplyScalar(k),side:T.DoubleSide}));
+      m.position.set(x,y,z);m.lookAt(0,0,0);s.add(m);
+    }
+    panel(0xfff1ea,7,9,5,-6,7,6);panel(0xffd7e0,4.5,6,9,9,2,4);panel(0xffe8c8,5,12,2,0,10,-4);
+    panel(0xffffff,3,5,5,0,-7,8);panel(0xe9b5c4,3.5,9,3,-10,-2,-4);panel(0xfff6f0,6,3,10,5,0,-9);
+    var pm=new T.PMREMGenerator(renderer);
+    scene.environment=pm.fromScene(s,0.035).texture;pm.dispose();
+  })();
+  var key=new T.DirectionalLight(0xfff0e8,1.1);key.position.set(3,5,7);scene.add(key);
+  scene.add(new T.AmbientLight(0xffe9ee,0.35));
+
+  var loader=new T.TextureLoader();
+  function tex(src){
+    var t=loader.load(src);t.encoding=T.sRGBEncoding;t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());return t;
+  }
+  var homeG=new T.Group(),bookG=new T.Group();
+  scene.add(homeG);scene.add(bookG);
+
+  /* batom */
+  var lipstick=new T.Group(),lipWrap=new T.Group();lipWrap.add(lipstick);homeG.add(lipWrap);
+  var goldM=new T.MeshPhysicalMaterial({color:0xc58b77,metalness:1,roughness:0.3,clearcoat:0.4,envMapIntensity:1.0});
+  var plumM=new T.MeshPhysicalMaterial({color:0x2f1a22,metalness:0.6,roughness:0.18,clearcoat:1,envMapIntensity:1.1});
+  var bulletM=new T.MeshPhysicalMaterial({color:0xc2806c,roughness:0.42,clearcoat:0.6,clearcoatRoughness:0.25,envMapIntensity:0.55});
+  function lathe(pts,mat,seg){
+    var g=new T.LatheGeometry(pts.map(function(p){return new T.Vector2(p[0],p[1])}),seg||72);return new T.Mesh(g,mat);
+  }
+  lipstick.add(lathe([[0,0],[0.47,0],[0.5,0.03],[0.5,1.25],[0.48,1.3],[0,1.3]],goldM));
+  lipstick.add(lathe([[0,1.3],[0.505,1.3],[0.505,1.43],[0,1.43]],plumM));
+  lipstick.add(lathe([[0,1.43],[0.41,1.43],[0.41,1.8],[0,1.8]],goldM));
+  var bulletBody=new T.Mesh(new T.CylinderGeometry(0.35,0.35,1,48,1,true).translate(0,0.5,0),bulletM);
+  bulletBody.position.y=1.8;
+  var tipGeo=new T.CylinderGeometry(0.35,0.35,0.34,48,1).translate(0,0.17,0);
+  (function(){var p=tipGeo.attributes.position;for(var i=0;i<p.count;i++){if(p.getY(i)>0.3)p.setY(i,p.getY(i)+p.getX(i)*0.62)}tipGeo.computeVertexNormals()})();
+  var bulletTip=new T.Mesh(tipGeo,bulletM);
+  lipstick.add(bulletBody,bulletTip);
+  var lid=lathe([[0,0],[0.57,0],[0.59,0.02],[0.59,1.76],[0.55,1.84],[0,1.86]],new T.MeshPhysicalMaterial({color:0xd9a591,metalness:1,roughness:0.16,clearcoat:1,envMapIntensity:1.5}));
+  lid.position.y=1.3;lipstick.add(lid);
+  var NUDE=new T.Color(0xc2806c),BERRY=new T.Color(0x8c1840);
+
+  /* livro (ebook) */
+  var BW=1.55,BH=BW/0.645,BD=0.26;
+  var cover=tex('assets/ebook-cover.jpg');
+  var pageM=new T.MeshStandardMaterial({color:0xfff4ee,roughness:0.85});
+  var spineM=new T.MeshPhysicalMaterial({color:0xc98a9a,roughness:0.4,clearcoat:0.6});
+  var frontM=new T.MeshPhysicalMaterial({map:cover,color:0xe6dada,roughness:0.5,clearcoat:0.5,clearcoatRoughness:0.25,envMapIntensity:0.35});
+  var book=new T.Mesh(new T.BoxGeometry(BW,BH,BD),[pageM,spineM,pageM,pageM,frontM,spineM]);
+  var board=new T.Mesh(new T.BoxGeometry(BW*1.025,BH*1.015,BD*0.92),new T.MeshStandardMaterial({color:0xa65a72,metalness:0.7,roughness:0.35,envMapIntensity:0.8}));
+  board.position.z=-0.012;
+  var bookWrap=new T.Group();bookWrap.add(board,book);bookG.add(bookWrap);
+
+  var VH=1,VW=1,S={};
+  function pageRect(el){
+    var r=el.getBoundingClientRect(),sc=window.scrollY;
+    return {x:r.left+r.width/2,y:r.top+sc+r.height/2,w:r.width,h:r.height,top:r.top+sc};
+  }
+  var wx=function(px){return (px-W/2)/W*VW};
+  var wy=function(py){return -(py/H)*VH};
+
+  function layout(){
+    setVh(false);
+    renderer.setSize(W,H,false);
+    camera.aspect=W/H;camera.updateProjectionMatrix();
+    VH=2*Math.tan(FOV*Math.PI/360)*CAMZ;VW=VH*camera.aspect;
+    var home=currentView==='home';
+    homeG.visible=home;bookG.visible=false;
+    if(home)S.rev=pageRect($('#reveal'));
+  }
+
+  var px=0,py=0,tx=0,ty=0;
+  window.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;tx=(e.clientX/W-0.5)*2;ty=(e.clientY/H-0.5)*2},{passive:true});
+  window.addEventListener('resize',function(){layout()});
+  window.addEventListener('load',layout);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
+  if(window.ResizeObserver){var lastH=0;new ResizeObserver(function(){var h=document.documentElement.scrollHeight;if(Math.abs(h-lastH)>4){lastH=h;layout()}}).observe(document.body)}
+
+  function pinned(st){
+    var max=Math.max(0,st.h-H),boxTop=clamp(sy,st.top,st.top+max);
+    return {cy:boxTop+H/2,p:max>0?clamp((sy-st.top)/max,0,1):0};
+  }
+  function window01(v,a,b,f){return clamp((v-a)/f,0,1)*clamp((b-v)/f,0,1)}
+
+  var sy=window.scrollY,last=performance.now(),t=0;
+  function frame(now){
+    requestAnimationFrame(frame);
+    var dt=Math.min(0.05,(now-last)/1000);last=now;t+=dt;
+    var target=window.scrollY;sy+=(target-sy)*(1-Math.pow(0.0006,dt));if(Math.abs(target-sy)<0.05)sy=target;
+    px+=(tx-px)*0.06;py+=(ty-py)*0.06;
+    var camY=-((sy+H/2)/H)*VH;
+    camera.position.set(px*0.35,camY-py*0.15,CAMZ);camera.lookAt(px*0.1,camY,0);
+
+    if(homeG.visible){
+      var lp=pinned(S.rev),lv=window01(sy,S.rev.top-H*1.1,S.rev.top+S.rev.h+H*0.2,H*0.4);
+      lipWrap.visible=lv>0.01;
+      if(lipWrap.visible){
+        var desk=W>=860,sl=Math.min(VH*0.5/3.2,(desk?0.4:0.6)*VW/1.2);
+        lipWrap.position.set(desk?VW*0.2:0,wy(lp.cy)+(desk?0:VH*0.12),0);
+        lipWrap.scale.setScalar(sl*(0.6+0.4*smooth(lv*1.4)));
+        lipstick.position.y=-1.55;
+        lipWrap.rotation.set(0.1,lp.p*Math.PI*2.4+0.5,-0.07);
+        var e1=smooth(lp.p/0.2),ext=smooth((lp.p-0.2)/0.72);
+        lid.position.y=1.3+2.6*e1;lid.rotation.z=-0.4*e1;
+        lid.scale.setScalar(Math.max(0.0001,1-smooth((e1-0.55)/0.45)));
+        var L=0.22+1.08*ext;bulletBody.scale.y=L;bulletTip.position.y=1.8+L;
+        bulletM.color.copy(NUDE).lerp(BERRY,ext).multiplyScalar(0.72);
+        lipWrap.position.y+=Math.sin(t*1.1)*0.06;
+        setLevel(lp.p<0.2?-1:Math.min(3,Math.floor((lp.p-0.2)/0.19)));
+      }
+    }else if(S.book){
+      var bw=Math.min(S.book.w/W*VW*0.62,S.book.h/H*VH*0.62/(BH/BW));
+      bookWrap.position.set(wx(S.book.x),wy(S.book.y)+Math.sin(t*1.1)*0.07,0);
+      bookWrap.scale.setScalar(bw/BW*1.5);
+      bookWrap.rotation.set(0.08+py*0.1,-0.5+Math.sin(t*0.6)*0.18+px*0.5+sy*0.0012,Math.sin(t*0.8)*0.03);
+    }
+    renderer.render(scene,camera);
+  }
+  requestAnimationFrame(frame);
+  return {layout:layout};
+}
+})();
+</script>
+</body></html>
